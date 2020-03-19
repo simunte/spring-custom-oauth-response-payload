@@ -1,0 +1,26 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOSTNAME:localhost}:${MYSQL_PORT:3306}/OAUTH?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:welcome1}
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: false
+
+security:
+  require-ssl: true
+  security-realm: ${SECURITY_REALM:Java Base}
+  keystore-password: ${KEYSTORE_PASSWORD:Welcome1!}
+  jwt:
+    client-id: ${JWT_CLIENT_ID:adminapp}
+    client-secret: ${JWT_CLIENT_SECRET:password}
+    grant-type: password
+    scope-read: read
+    scope-write: write
+    resource-ids: ${JWT_RESOURCE_IDS:mw/adminapp}
+    access-token-validity: 1
+    refresh-token-validity: 6
