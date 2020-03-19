@@ -12,20 +12,21 @@ merupakan project untuk custom response payload (token maupun body) dari oauth s
 > 1. default response payload : <br>
 >    if you convert acess_token using jwt.io online converter, then the result : 
 ```    
-        "aud": [ 
-            "mw/adminapp" 
-          ], 
-          "user_name": "user1", 
-          "scope": [ 
-            "read", 
-            "write" 
-          ], 
-          "exp": 1584617246, 
-          "authorities": [ 
-            "ADMIN" 
-          ], 
-          "jti": "40db4f99-01ac-45d7-99b2-e77610b06b6a",
-          "client_id": "adminapp"
+        {
+           "aud": [ 
+              "mw/adminapp" 
+            ], 
+            "user_name": "user1", 
+            "scope": [ 
+                "read", 
+                "write" 
+             ], 
+             "exp": 1584617246, 
+             "authorities": [ 
+                "ADMIN" 
+             ], 
+             "jti": "40db4f99-01ac-45d7-99b2-e77610b06b6a",
+             "client_id": "adminapp"
         }
 ```
 
@@ -34,58 +35,58 @@ merupakan project untuk custom response payload (token maupun body) dari oauth s
 >   if you convert acess_token using jwt.io online converter, then the result : 
 ```
         {
-         "aud": [
-           "mw/adminapp"
-         ],
-         "user_name": "user1",
-         "scope": [
-           "read",
-           "write"
-         ],
-         "exp": 1584617862,
-         "authorities": [
-           "ADMINISTRATOR",
-           "SUPERVISOR"
-         ],
-         "jti": "9ef2ce77-7911-4c81-9c8b-2a4f15d959e5",
-         "client_id": "adminapp"
-       }
+           "aud": [ 
+              "mw/adminapp" 
+            ], 
+            "user_name": "user1", 
+            "scope": [ 
+                "read", 
+                "write" 
+             ], 
+             "exp": 1584617246, 
+             "authorities": [ 
+                "ADMINISTRATOR",
+                "SUPERVISOR"
+             ], 
+             "jti": "40db4f99-01ac-45d7-99b2-e77610b06b6a",
+             "client_id": "adminapp"
+        }
 ```
 > 3. Custom (add new field):
 >   for this part you need to modify your web security Configuration
 >   below new payload of your oauth/token api (there is a "custom_payload" field added):
 ```
-       {
-         "aud": [
-           "mw/adminapp"
-         ],
-         "user_name": "user1",
-         "scope": [
-           "read",
-           "write"
-         ],
-         "exp": 1584617862,
-         "authorities": [
-           "ADMINISTRATOR",
-           "SUPERVISOR"
-         ],
-         "jti": "9ef2ce77-7911-4c81-9c8b-2a4f15d959e5",
-         "client_id": "adminapp",
-         "custom_payload": {
-              "username": "user1",
-              "email": "user1@mailinator.com",
-              "list_role": [
-                {
-                  "role_id": 1,
-                  "role_name": "ADMINISTRATOR",
-                  "role_description": "ADMINISTRATOR"
-                },
-                {
-                  "role_id": 3,
-                  "role_name": "SUPERVISOR",
-                  "role_description": "SUPERVISOR"
-                }
-              ]
+        {
+           "aud": [ 
+              "mw/adminapp" 
+            ], 
+            "user_name": "user1", 
+            "scope": [ 
+                "read", 
+                "write" 
+             ], 
+             "exp": 1584617246, 
+             "authorities": [ 
+                "ADMINISTRATOR",
+                "SUPERVISOR"
+             ], 
+             "jti": "40db4f99-01ac-45d7-99b2-e77610b06b6a",
+             "client_id": "adminapp",
+             "custom_payload": {
+                "username": "user1",
+                "email": "user1@mailinator.com",
+                "list_role": [
+                    {
+                        "role_id": 1,
+                        "role_name": "ADMINISTRATOR",
+                        "role_description": "ADMINISTRATOR"
+                     },
+                     {
+                        "role_id": 3,
+                        "role_name": "SUPERVISOR",
+                        "role_description": "SUPERVISOR"
+                      }
+                ]
             }
-       }
+        }
 ```
