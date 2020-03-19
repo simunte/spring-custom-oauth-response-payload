@@ -8,7 +8,7 @@ merupakan project untuk custom response payload (token maupun body) dari oauth s
 > MySQL <br>
 > Editor or IDE (Eclipse, IntelliJ, etc)
 
-## Description
+## Result
 > 1. default response payload : <br>
 >    if you convert acess_token using jwt.io online converter, then the result : 
 ```    
